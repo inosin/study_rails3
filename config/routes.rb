@@ -1,5 +1,9 @@
+require 'home_app'
+require 'processes_app'
 StudyRails3::Application.routes.draw do
   resources :posts
+  root :to => HomeApp
+  match '/processes', :to => ProcessesApp.action(:index)
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
